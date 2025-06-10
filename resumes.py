@@ -1,5 +1,5 @@
 import streamlit as st
-import PyPDF2
+import Pypdf2
 import io
 from reportlab.lib.pagesizes import letter
 from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer
@@ -23,7 +23,7 @@ if "report" not in st.session_state:
 # Function to extract text from PDF
 def extract_text_from_pdf(file):
     try:
-        reader = PyPDF2.PdfReader(file)
+        reader = Pypdf2.PdfReader(file)
         text = ""
         for page in reader.pages:
             text += page.extract_text() or ""
